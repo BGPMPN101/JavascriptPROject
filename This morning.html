@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML / JavaScript template</title> 	
+</head>
+<body>
+<h2>JavaScript*Tester</h2>
+
+<!-- Begin JavaScript --------------------------------------->
+<script>
+document.write('<h2> Part 1</h2>');
+
+
+
+        document.write('<table border=1>'); 
+
+
+function myFunction(){   //my function 
+var result = 'x';
+        document.write('<th style="background-color:#00FFFF">' , result, '</th>');   // Place X Row
+var result = 1;
+
+while(result<11){
+        document.write('<th style="background-color:#00FFFF">' , result, '</th>');   //Create Top row
+    result++;
+}
+
+
+
+for (var row = 1; row <11; row++) {            //create repeating rows
+        document.write('<tr>');                 //start a row
+
+        document.write('<th style="background-color:#00FFFF">' , row , '</th>');
+
+                                
+
+    for (var col = 1; col <11; col++) {        //create col
+
+
+        if(row == 0 && col > 0){
+          result +=+ row;
+        } 
+        else if(col == 0 && row>0){
+          result += col;
+        } 
+        else if(row>0 && col>0){
+        result += (row*col) + ' ';
+        }
+        document.write('<td>' +(row*col) + '</td>');
+result += '\n'
+    }
+    
+        document.write('</tr>');
+}
+
+
+        document.write('</table>'); 
+
+}
+        document.write(myFunction())
+
+//Start Part 2 Random Number
+        document.write('<h2> Part 2</h2>'); 
+
+    rand= Math.random( );               // random number func
+    rand = rand * 10;               
+    maxRow = Math.floor((Math.random() * 10));
+    maxCol = Math.floor((Math.random() * 10));
+
+        document.write('<table border=1>'); 
+
+    var result = 'x';
+        document.write('<th style="background-color:#00FFFF">' , result, '</th>');   // Place X Row
+    var result = 1;
+
+    while(result<maxCol){
+            document.write('<th style="background-color:#00FFFF">' , result, '</th>');   //Create Top row
+                result++;
+}
+
+
+
+    for (var row = 1; row < maxRow; row++) {            //create repeating rows
+            document.write('<tr>');                 //start a row
+
+            document.write('<th style="background-color:#00FFFF">' , row , '</th>');
+
+								
+
+                 for (var col = 1; col < maxCol; col++) {        //create col
+
+
+                    if(row == 0 && col > 0){
+                        result +=+ row;
+                     } 
+                     else if(col == 0 && row>0){
+                         result += col;
+                     } 
+                     else if(row>0 && col>0){
+                        result += (row*col) + ' ';
+                    }
+             document.write('<td>' +(row*col) + '</td>');
+            result += '\n'
+    }
+    
+        document.write('</tr>');
+}
+
+
+        document.write('</table>');	
+
+        document.write('<h2> Part 3</h2>'); 
+        document.write('<table border=1>'); 
+        document.write(myFunction()); //calling function
+
+
+
+</script>
+<!-- End JavaScript ----------------------------------------->
+
+</body>
+</html>
